@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "sass:watch": "sass --watch scss:docs/css"
+  },
+  "devDependencies": {
+    "sass": "^1.50.0"
+  }
+}
