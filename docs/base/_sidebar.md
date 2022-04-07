@@ -1,5 +1,6 @@
 <!-- docs/_sidebar.md -->
 
-* [Home](/)
+* [Back](/)
+* [Base](/base/)
 * [Reset](/base/_reset.md)
 * [Typography](/base/_typography.md)

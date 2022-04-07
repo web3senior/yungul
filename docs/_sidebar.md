@@ -1,7 +1,13 @@
 <!-- docs/_sidebar.md -->
 
-* [Quick Start](/)
+* [Welcome](/)
+* [Quick Start](/_quickstart.md)
 * [Architecture](/_architecture.md)
 * [Base](/base/_base.md "Base")
-* [Forms](_form.md)
-* [Guide](guide.md)
+* Components
+* [Alert](/alert/_alert.md)
+* [Badge]()
+* [Button]()
+* [Card]()
+* [List Group]()
+* [Table]()

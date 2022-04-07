@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "serve":"docsify serve docs",
     "sass:watch": "sass --watch scss:docs/css"
   },
   "devDependencies": {

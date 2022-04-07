@@ -1,9 +1,7 @@
 # Yungul
 Yungul is a super light-weight & open source modern CSS framework.
 
-# Documentation
-https://web3senior.github.io/yungul/
+[![GitHub license](https://img.shields.io/github/license/web3senior/yungul)](https://github.com/web3senior/yungul/blob/main/LICENSE.md)
 
-<mark class="class1">
-asdf
-</mark>
+## Quick View
+A video for demonstrating the all elements.

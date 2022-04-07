@@ -1,0 +1,164 @@
+
+/* List Groups */
+.list-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 10px 5px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075);
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+
+
+.list-group-flush:first-child .list-group-item:first-child {
+
+    border-top: 0;
+
+}
+.list-group-flush .list-group-item {
+
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+
+}
+.list-group-item:first-child {
+
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+
+}
+
+.list-group-item-primary {
+    color: #004085;
+    background-color: #b8daff;
+}
+.list-group-item-secondary {
+    color: #383d41;
+    background-color: #d6d8db;
+}
+.list-group-item-success {
+    color: #155724;
+    background-color: #c3e6cb;
+}
+.list-group-item-danger {
+    color: #721c24;
+    background-color: #f5c6cb;
+}
+.list-group-item-warning {
+    color: #856404;
+    background-color: #ffeeba;
+}
+.list-group-item-info {
+    color: #0c5460;
+    background-color: #bee5eb;
+}
+.list-group-item-light {
+    color: #818182;
+    background-color: #fdfdfe;
+}
+.list-group-item-dark {
+    color: #1b1e21;
+    background-color: #c6c8ca;
+}
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #008cff;
+    border-color: #008cff;
+}
+
+.list-group-item.active-success {
+    z-index: 2;
+    color: #fff;
+    background-color: #15ca20;
+    border-color: #15ca20;
+}
+
+.list-group-item.active-danger {
+    z-index: 2;
+    color: #fff;
+    background-color: #fd3550;
+    border-color: #fd3550;
+}
+
+.list-group-item.active-warning {
+    z-index: 2;
+    color: #fff;
+    background-color: #ff9700;
+    border-color: #ff9700;
+}
+
+.list-group-item.active-info {
+    z-index: 2;
+    color: #fff;
+    background-color: #0dceec;
+    border-color: #0dceec;
+}
+
+.list-group-item.active-dark {
+    z-index: 2;
+    color: #fff;
+    background-color: #223035;
+    border-color: #223035;
+}
+.list-group-item.active-secondary {
+    z-index: 2;
+    color: #fff;
+    background-color: #75808a;
+    border-color: #75808a;
+}
+
+.list-group-primary .list-group-item{
+    background-color: #008cff;
+    color: #fff;
+    border: 1px solid #39a3fb;
+    box-shadow: inset 0 -1px 0px #0574d1;
+}
+.list-group-success .list-group-item{
+    background-color: #15ca20;
+    color: #fff;
+    border: 1px solid #16da22;
+    box-shadow: inset 0 -1px 0px #0fae18;
+}
+.list-group-danger .list-group-item{
+    background-color: #fd3550;
+    color: #fff;
+    border: 1px solid #ff6579;
+    box-shadow: inset 0 -1px 0px #de2039;
+}
+.list-group-warning .list-group-item{
+    background-color: #ff9700;
+    color: #fff;
+    border: 1px solid #ffae3b;
+    box-shadow: inset 0 -1px 0px #e28907;
+}
+.list-group-info .list-group-item{
+    background-color: #0dceec;
+    color: #fff;
+    border: 1px solid #0fdfff;
+    box-shadow: inset 0 -1px 0px #08afc9;
+}
+.list-group-dark .list-group-item{
+    background-color: #223035;
+    color: #fff;
+    border: 1px solid #2d424c;
+    box-shadow: inset 0 -1px 0px #0f1518;
+}
+.list-group-secondary .list-group-item{
+    background-color: #75808a;
+    color: #fff;
+    border: 1px solid #8b939a;
+    box-shadow: inset 0 -1px 0px #525b62;
+}
+
