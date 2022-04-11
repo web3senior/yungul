@@ -72,11 +72,17 @@ select {
     scroll-behavior: auto !important;
   }
 }
+/**
+* Provide contextual feedback messages in order to the actions.
+*/
 .alert {
   position: relative;
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
-  border: 1px solid transparent;
+}
+.alert.alert--border {
+  border-width: 1px;
+  border-style: solid;
   border-radius: 0.25rem;
 }
 .alert hr {
@@ -88,9 +94,93 @@ select {
 .alert span {
   vertical-align: middle;
 }
-
-.alert-link {
-  font-weight: 700;
+.alert.alert--primary {
+  color: #004085;
+  background-color: #9fcdff;
+  border-color: #002752;
+}
+.alert.alert--primary .alert__link {
+  color: #002752;
+}
+.alert.alert--primary hr {
+  border-top-color: #002752;
+}
+.alert.alert--secondary {
+  color: #383d41;
+  background-color: #e2e3e5;
+  border-color: #202326;
+}
+.alert.alert--secondary .alert__link {
+  color: #202326;
+}
+.alert.alert--secondary hr {
+  border-top-color: #202326;
+}
+.alert.alert--danger {
+  color: #5d101d;
+  background-color: #ffd5da;
+  border-color: #390b1b;
+}
+.alert.alert--danger .alert__link {
+  color: #491217;
+}
+.alert.alert--danger hr {
+  border-top-color: #390b1b;
+}
+.alert.alert--info {
+  color: #045356;
+  background-color: #cceef0;
+  border-color: #5eaab7;
+}
+.alert.alert--info .alert__link {
+  color: #062c33;
+}
+.alert.alert--info hr {
+  border-top-color: #5eaab7;
+}
+.alert.alert--warning {
+  color: #a06923;
+  background-color: #fff5c9;
+  border-color: #f3bb66;
+}
+.alert.alert--warning .alert__link {
+  color: #533f03;
+}
+.alert.alert--warning hr {
+  border-top-color: #f3bb66;
+}
+.alert.alert--dark {
+  color: #1b1e21;
+  background-color: #d6d8d9;
+  border-color: #c6c8ca;
+}
+.alert.alert--dark .alert__link {
+  color: #040505;
+}
+.alert.alert--dark hr {
+  border-top-color: #c6c8ca;
+}
+.alert.alert--light {
+  color: #818182;
+  background-color: #fefefe;
+  border-color: #fdfdfe;
+}
+.alert.alert--light .alert__link {
+  color: #686868;
+}
+.alert.alert--light hr {
+  border-top-color: #fdfdfe;
+}
+.alert.alert--success {
+  color: #277539;
+  background-color: #daffe6;
+  border-color: #202b22;
+}
+.alert.alert--success .alert__link {
+  color: #0b2e13;
+}
+.alert.alert--success hr {
+  border-top-color: #202b22;
 }
 
 .alert-dismissible {
@@ -122,102 +212,6 @@ select {
 .alert-heading {
   color: inherit;
   font-size: 1.5rem !important;
-}
-
-.alert-success {
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-}
-.alert-success .alert-link {
-  color: #0b2e13;
-}
-.alert-success hr {
-  border-top-color: #b1dfbb;
-}
-
-.alert-info {
-  color: #0c5460;
-  background-color: #d1ecf1;
-  border-color: #bee5eb;
-}
-.alert-info .alert-link {
-  color: #062c33;
-}
-.alert-info hr {
-  border-top-color: #abdde5;
-}
-
-.alert-warning {
-  background-color: #fef7e0;
-  color: #b05a00;
-  border-color: #ffeeba;
-}
-.alert-warning .alert-link {
-  color: #533f03;
-}
-.alert-warning hr {
-  border-top-color: #ffe8a1;
-}
-
-.alert-danger {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-}
-.alert-danger .alert-link {
-  color: #491217;
-}
-.alert-danger hr {
-  border-top-color: #f1b0b7;
-}
-
-.alert-primary {
-  color: #004085;
-  background-color: #cce5ff;
-  border-color: #b8daff;
-}
-.alert-primary .alert-link {
-  color: #002752;
-}
-.alert-primary hr {
-  border-top-color: #9fcdff;
-}
-
-.alert-secondary {
-  color: #383d41;
-  background-color: #e2e3e5;
-  border-color: #d6d8db;
-}
-.alert-secondary .alert-link {
-  color: #202326;
-}
-.alert-secondary hr {
-  border-top-color: #c8cbcf;
-}
-
-.alert-light {
-  color: #818182;
-  background-color: #fefefe;
-  border-color: #fdfdfe;
-}
-.alert-light .alert-link {
-  color: #686868;
-}
-.alert-light hr {
-  border-top-color: #ececf6;
-}
-
-.alert-dark {
-  color: #1b1e21;
-  background-color: #d6d8d9;
-  border-color: #c6c8ca;
-}
-.alert-dark .alert-link {
-  color: #040505;
-}
-.alert-dark hr {
-  border-top-color: #b9bbbe;
 }
 
 /*Badges*/
@@ -467,5 +461,10 @@ select {
   -ms-flex-line-pack: stretch;
   align-content: stretch;
 }
+
+/**
+* This is a BEM project (Yungul is using  Block, Element, Modifier methodology).
+* 
+*/
 
 /*# sourceMappingURL=style.css.map */

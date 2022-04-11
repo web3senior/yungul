@@ -1,167 +1,144 @@
+/**
+* Provide contextual feedback messages in order to the actions.
+*/
+
+// Use
+@use "sass:list";
+@use "sass:map";
+
+// Data Members
+$alerts: (
+  primary: (
+    background: #9fcdff,
+    color: #004085,
+    stroke: #002752,
+    link: #002752,
+  ),
+  secondary: (
+    background: #e2e3e5,
+    color: #383d41,
+    stroke: #202326,
+    link: #202326,
+  ),
+  danger: (
+    background: #ffd5da,
+    color: #5d101d,
+    stroke: #390b1b,
+    link: #491217,
+  ),
+  info: (
+    background: #cceef0,
+    color: #045356,
+    stroke: #5eaab7,
+    link: #062c33,
+  ),
+  warning: (
+    background: #fff5c9,
+    color: #a06923,
+    stroke: #f3bb66,
+    link: #533f03,
+  ),
+  dark: (
+    background: #d6d8d9,
+    color: #1b1e21,
+    stroke: #c6c8ca,
+    link: #040505,
+  ),
+  light: (
+    background: #fefefe,
+    color: #818182,
+    stroke: #fdfdfe,
+    link: #686868,
+  ),
+  success: (
+    background: #daffe6,
+    color: #277539,
+    stroke: #202b22,
+    link: #0b2e13,
+  ),
+);
+
+$border: (
+  width: 1px,
+  style: solid,
+  radius: 0.25rem,
+);
+
+$padding: (
+  x: 1.25rem,
+  y: 0.75rem,
+);
+
+// Alert
 .alert {
-    position: relative;
-    padding: .75rem 1.25rem;
+  position: relative;
+  padding: map.get($padding, y) map.get($padding, x);
+  margin-bottom: 1rem;
+
+  &.alert--border {
+    border-width: map.get($border, width);
+    border-style: map.get($border, style);
+    border-radius: map.get($border, radius);
+  }
+
+  hr {
+    margin-top: 1rem;
     margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: .25rem;
+    border: 0;
+    border-top: 1px solid transparent;
+  }
 
-    hr {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        border: 0;
-        border-top: 1px solid transparent;
+  span {
+    vertical-align: middle;
+  }
+
+  /// @param {List} $alerts
+  @each $alert in (map.keys($alerts)) {
+    &.alert--#{$alert} {
+      color: map.get($alerts, $alert, color);
+      background-color: map.get($alerts, $alert, background);
+      border-color: map.get($alerts, $alert, stroke);
+
+      .alert__link {
+        color: map.get($alerts, $alert, link);
+      }
+
+      hr {
+        border-top-color: map.get($alerts, $alert, stroke);
+      }
     }
-
-    span {
-        vertical-align: middle;
-    }
-}
-
-.alert-link {
-    font-weight: 700;
+  }
 }
 
 .alert-dismissible {
-    padding-left: 4rem;
+  padding-left: 4rem;
 
-    .close {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 40px;
-        height: 40px;
-        padding: .75rem 1.25rem;
-        color: inherit;
-        font-size: 1.5rem;
-        font-weight: 700;
-        line-height: 1;
-        color: #000;
-        text-shadow: 0 1px 0 #fff;
-    }
+  .close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+  }
 
-    button.close {
-        padding: 0;
-        background-color: transparent;
-        border: 0;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-    }
+  button.close {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 }
 
 .alert-heading {
-    color: inherit;
-    font-size: 1.5rem !important;
-}
-
-.alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-
-    .alert-link {
-        color: #0b2e13;
-    }
-
-    hr {
-        border-top-color: #b1dfbb;
-    }
-}
-
-.alert-info {
-    color: #0c5460;
-    background-color: #d1ecf1;
-    border-color: #bee5eb;
-
-    .alert-link {
-        color: #062c33;
-    }
-
-    hr {
-        border-top-color: #abdde5;
-    }
-}
-
-.alert-warning {
-    background-color: #fef7e0;
-    color: #b05a00;
-    border-color: #ffeeba;
-
-    .alert-link {
-        color: #533f03;
-    }
-
-    hr {
-        border-top-color: #ffe8a1;
-    }
-}
-
-.alert-danger {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-
-    .alert-link {
-        color: #491217;
-    }
-
-    hr {
-        border-top-color: #f1b0b7;
-    }
-}
-
-.alert-primary {
-    color: #004085;
-    background-color: #cce5ff;
-    border-color: #b8daff;
-
-    .alert-link {
-        color: #002752;
-    }
-
-    hr {
-        border-top-color: #9fcdff;
-    }
-}
-
-.alert-secondary {
-    color: #383d41;
-    background-color: #e2e3e5;
-    border-color: #d6d8db;
-
-    .alert-link {
-        color: #202326;
-    }
-
-    hr {
-        border-top-color: #c8cbcf;
-    }
-}
-
-.alert-light {
-    color: #818182;
-    background-color: #fefefe;
-    border-color: #fdfdfe;
-
-    .alert-link {
-        color: #686868;
-    }
-
-    hr {
-        border-top-color: #ececf6;
-    }
-}
-
-.alert-dark {
-    color: #1b1e21;
-    background-color: #d6d8d9;
-    border-color: #c6c8ca;
-
-    .alert-link {
-        color: #040505;
-    }
-
-    hr {
-        border-top-color: #b9bbbe;
-    }
+  color: inherit;
+  font-size: 1.5rem !important;
 }
